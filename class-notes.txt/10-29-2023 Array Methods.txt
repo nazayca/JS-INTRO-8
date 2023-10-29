@@ -83,3 +83,20 @@ NOTE: This could be useful when concatenating and pushing multiple elements into
 -it does not take any argument
 -it returns the modified original array 
 -it changes the original array
+
+
+10. slice() method
+-used to get sub-array from original array
+-it takes either one or 2 arguments as starting and ending indexes 
+-it returns a sub-array
+-it does not change anything in the original array
+
+
+11. splice() method
+-adds/removes or do both within an array
+-it takes 2 or more arguments
+    first argument that defines the position where elements should be added/removed.
+    second argument defines how many elements should be removed.
+    rest of the arguments define the new elements to be added.
+-it returns the removed elements as an array. If there is no elements removed, then it returns empty array.
+-it changes the original array
