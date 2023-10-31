@@ -100,3 +100,4 @@ NOTE: This could be useful when concatenating and pushing multiple elements into
     rest of the arguments define the new elements to be added.
 -it returns the removed elements as an array. If there is no elements removed, then it returns empty array.
 -it changes the original array
+
