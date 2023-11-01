@@ -31,3 +31,25 @@ else console.log(false);
 
 // We can simplify this if-else
 console.log(((Math.floor(Math.random() * 10) + 1) + (Math.floor(Math.random() * 10) + 1)) % 2 === 0);
+
+for ( let i = 0; i<5;i++){
+   console.log( "Hello World")
+};
+
+for (let i = 1; i<=5; i++){
+    if(i % 2 !==0) console.log("Hello World")
+}
+ for (let i = 5; i>=1; i--){
+    if(i % 2 !==0) console.log("Hello World",)
+ }
+for (let i = 0; i<8; i++){
+    if( i %2===0) console.log('Hi Ayca',i);
+}
+
+const colours =['Red', 'Blue', 'Yellow', 'Purple','Orange'];
+
+let colour = 0;
+ while (colour < colours.length){
+    console.log(`${colours[colour]}`);
+    colour++
+ }
