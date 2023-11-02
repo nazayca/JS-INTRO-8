@@ -157,3 +157,6 @@ else {
       console.log(i);
   }
 }
+
+
+console.log(sum); // 75

@@ -54,4 +54,16 @@ let colour = 0;
     colour++
  }
 
+ const names = "TechGlobal School";
+for(let i = 0; i< names.length; i++){
+console.log(names[i]);
+}
+
+let random = Math.floor(Math.random()*(10)+1);
+for( let i = 1; i<= random; i++){
+    if (i %2!==0)console.log(i)
+}
+
+
+
 
