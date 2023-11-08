@@ -128,7 +128,8 @@ for(let i = 1; i <= Math.floor(Math.random() * 11) + 10; i++) {
 }
 
 /*
-Print all the numbers between 2 random numbers in the range of 1 to 10 (both inclusive) in ascending order
+Print all the numbers between 2 random numbers in the range of 1 to 10 
+(both inclusive) in ascending order
 
 r1 r2
 7, 5    -> 5 6 7
