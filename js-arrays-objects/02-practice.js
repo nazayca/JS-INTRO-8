@@ -65,14 +65,15 @@ let countChicago = 0;
 const younger35 = [];
 let sumAge = 0;
 
-for(const user of users) {
-    if(user.age > 30) count30Plus++;
-    if(user.address.city.toLowerCase() === 'chicago') countChicago++;
-    if(user.age < 35) younger35.push(user.firstName);
-    sumAge += user.age;
-}
 
-console.log(count30Plus); // 2
-console.log(countChicago); // 2
-console.log(younger35); // [ 'Tech', 'Jane', 'Alex' ]
-console.log(sumAge / users.length); // 28
+
+for(const user of users){
+    if(user.age>30) count30Plus++;
+    if(user.address.city.toLowerCase()=== 'chicago')countChicago++;
+    if(user.age<35)younger35.push(user.firstName +' '+ user.lastName)
+    sumAge+=user.age
+    }
+console.log(count30Plus);
+console.log(countChicago);
+console.log(younger35)
+console.log(sumAge/users.length)

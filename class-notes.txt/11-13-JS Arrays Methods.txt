@@ -1,0 +1,27 @@
+
+
+
+
+RECAP
+
+function or method : they are usefull very common to use in any programming language as they allow programmer
+to write a block of code once and execute it many times
+
+function name(){
+    //block to execute
+}
+// invokeing a function 
+name()
+
+function expression : another way to define function in Js and we can ccreat unnamed function and assign it to an variable
+
+const name = function(){
+
+};
+invokeing
+name();
+
+arrow functions: new sytn
+const hello= ()=> console.log(hello)
+
+call back function it s a function used a an argumento to another function

@@ -121,16 +121,13 @@ for (let i = 0; i < firstArr.length; i++) {
 console.log("3rd array is = ", thirdArr);
 
 //Task-15
-function firstDuplicate(arr1){
-    for(let i = 0; i<arr1.length; i++){
-        for(let j = i+1; j<arr1.length; j++){
-            if(arr1[i]===arr1[j]){
-               return arr1[i]
-            }
-          
+function firstDuplicate(arr1) {
+    for (let i = 0; i < arr1.length; i++) {
+        for (let j = i + 1; j < arr1.length; j++) {
+            if (arr1[i] === arr1[j]) return arr1[i];
         }
     }
-   return -1;
+    return -1
 }
 
 
@@ -143,17 +140,15 @@ console.log(firstDuplicate(['foo', 'abc', '123', 'bar']))
 
 //Task-16
 
-function getDuplicates(arr){
+function getDuplicates(arr) {
     let newArray = []
 
-    for(let i=0; i<arr.length; i++){
-        for(let j = i+1; j <arr.length; j++){
-            if(arr[i]===arr[j]){
-                newArray.push(arr[i])
-            }
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] === arr[j] && !newArray.includes(arr[i])) newArray.push(arr[i])
         }
     }
-    return newArray
+    return newArray;
 }
 
 console.log(getDuplicates([0, -4, -7, 0, 5, 10, 45, -7, 0]));
@@ -164,10 +159,13 @@ console.log(getDuplicates(['foo', '12', 12, 'bar', 'a']));
 
 //Task-17
 
-function reverseStringWords(str){
-  if(str.length<=0){
-    return str;
-  }else return str.trim().split('').reverse().join('');
+
+function reverseStringWords(str) {
+    let strAsArr = str.trim().split(' ')
+    for (let i = 0; i < strAsArr.length; i++) {
+        strAsArr[i] = strAsArr[i].split('').reverse().join('');
+    }
+    return strAsArr.join(' ')
 }
 console.log(reverseStringWords("Hello World"));
 console.log(reverseStringWords("I like JavaScript"));
@@ -175,32 +173,32 @@ console.log(reverseStringWords("Hello"));
 console.log(reverseStringWords(""));
 console.log(reverseStringWords(" "));
 
+
+
 //Task-18
 
-function getEvens(num1,num2){
-    const evens = [];
-    for(let i = Math.min(num1,num2);i<=Math.max(num1,num2);i++){
-        if(i %2===0){
-            evens.push(i)
-        }
-    }  
-    return evens;   
-} 
+function getEvens(num1, num2) {
+    let evens = [];
+    for (let i = Math.min(num1, num2); i <= Math.max(num1, num2); i++) {
+        if (i % 2 === 0) evens.push(i)
+    }
+    return evens;
+}
 
-console.log(getEvens(2, 7) )
-console.log(getEvens(17,5) )
-console.log(getEvens(4, 4) )
-console.log(getEvens(3, 3) )
+console.log(getEvens(2, 7))
+console.log(getEvens(17, 5))
+console.log(getEvens(4, 4))
+console.log(getEvens(3, 3))
 
 //Task-19
 
-function getMultipleOf5(nr1,nr2){
-    const divided5 = [];
-    for(let i = Math.max(nr1,nr2); i>=Math.min(nr1,nr2); i--){
-     if(i%5===0){
-        divided5.push(i)
-     }
+function getMultipleOf5(nr1, nr2) {
+    let divided5 = [];
+
+    for (let i = Math.max(nr1, nr2); i >= Math.min(nr1, nr2); i--) {
+        if (i % 5 === 0) divided5.push(i)
     }
+    if (nr1 < nr2) return divided5.reverse()
     return divided5;
 }
 console.log(getMultipleOf5(3, 17));
@@ -210,27 +208,23 @@ console.log(getMultipleOf5(2, 4));
 
 //Task-20
 
-function fizzBuzz(x,y){
-    let rslt = '';
-    for(let i = Math.min(x,y); i<=Math.max(x,y);i++){
-       if(i %15 === 0){
-        rslt = rslt+'FizzBuzz'+'|'
-       }else if(i % 5 ===0){
-        rslt= rslt+'Buzz'+'|'
-       }else if(i % 3 === 0 ){
-        rslt= rslt+'Fizz'+'|'
-       }else{
-        rslt+= i+'|'
-       }
+function fizzBuzz(x, y) {
+    let str = '';
+    for (let i = Math.min(x, y); i <= Math.max(x, y); i++) {
+        if (i % 15 === 0) str += 'FizzBuzz | '
+        else if (i % 5 === 0) str += 'Buzz | '
+        else if (i % 3 === 0) str += 'Fizz | '
+        else str += i + ' | '
+
     }
-return rslt
+    return str.slice(0,-3);
 }
-  
-   
-console.log(fizzBuzz(13,18));
-console.log(fizzBuzz(12,5));
-console.log(fizzBuzz(5,5));
-console.log(fizzBuzz(9,6));
+
+
+console.log(fizzBuzz(13, 18));
+console.log(fizzBuzz(12, 5));
+console.log(fizzBuzz(5, 5));
+console.log(fizzBuzz(9, 6));
 
 
 

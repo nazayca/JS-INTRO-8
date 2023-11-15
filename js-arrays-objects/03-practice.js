@@ -1,4 +1,5 @@
 const appleStore = [
+
     {
         productName: "iPhone 14 Pro",
         quantity: 50,
@@ -32,5 +33,66 @@ const appleStore = [
 // Find the product with the smallest quantity  -> MacBook Pro 16-inch
 // Find all the product names   -> [ 'iPhone 14 Pro', 'MacBook Pro 16-inch', 
 //'iPad Air', 'Apple Watch Series 7', 'AirPods Pro' ]
+
+//
+
+
+
+
+let maxPrice = 0;
+let mostExpensiveProduct;
+let minPrice = +Infinity;
+let leastPricedProduct;
+let biggestAmount = 0;
+let biggestAmountProduct;
+let smallestAmount = +Infinity;
+let smallestAmountProduct;
+let allproducts = []
+
+for (const product of appleStore) {
+    if (product.price > maxPrice) {
+        maxPrice = product.price;
+        mostExpensiveProduct = product.productName;
+    }
+    if (product.price < minPrice) {
+        minPrice = product.price
+        leastPricedProduct = product.productName
+    }
+    if (product.quantity > biggestAmount) {
+        biggestAmount = product.quantity;
+        biggestAmountProduct = product.productName
+    }
+    if (product.quantity < smallestAmount) {
+        smallestAmount = product.quantity
+        smallestAmountProduct = product.productName
+    }
+    allproducts.push(product.productName)
+
+
+}
+console.log(mostExpensiveProduct)
+console.log(leastPricedProduct)
+console.log(biggestAmountProduct)
+console.log(smallestAmountProduct)
+console.log(allproducts)
+
+//// another solution if the obj is not empty
+
+let most_expensive_product = appleStore[0];
+if (product.price > most_expensive_product.price) most_expensive_product = product
+
+
+console.log(most_expensive_product.productName)
+
+
+
+
+
+
+
+
+
+
+
 
 
