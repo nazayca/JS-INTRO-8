@@ -1,0 +1,100 @@
+
+
+OOP:
+Facebook-Meta
+3 billion
+
+const user1 = {
+    personalInfo :{
+
+    },
+    posts :[
+        {
+            type:,
+            time: ,
+            likes: ,
+            comments :[
+                {
+                    user :
+                }
+            ]
+        }
+    ]
+}
+
+Before ES6
+
+-It is special function (constructor function) that allows us to declare a prototype
+which will help us to create many similiar objects from.
+- constructor is always used with the 'new' keyword to create an object of that 
+prototype
+-new keyword: it is a reserved
+
+Object- deside two things
+what the object has = properties/ key value pairs/fields/states/ instance variables
+what the object does = Methods/ functions
+
+
+function Car(year, make , color, model, price){
+    this.year = year;
+    this.make = make;
+    this.color = color;
+    this.model = model;
+    this.price = price;
+}
+Car.prototype.drive = function(){
+    console.log(`${this.make} drives)
+}
+// creating objects from the car constructor / Car prototype
+const car1 = new Car (2023, 'Tesla', 'White', 'X',80000);
+const car2 = naw Car (2023, 'BMW', 'Black', 'X8', 100000);
+
+
+console.log(car2.color)//Black
+console.log(car1.model)//x
+console.log(car1.price)80000
+
+
+
+//If you were to create only single a car object
+const car1 = {
+    year : 2023
+    make :'Tesla',
+    color: 'White',
+    model : 'X',
+    price: 80000
+}
+
+regular function
+function sum(x,y){
+    //body to run a task
+}
+///////////////////////////////////
+
+function Car(year, make , color, model, price){
+    this.year = year;
+    this.make = make;
+    this.color = color;
+    this.model = model;
+    this.price = price;
+}
+
+AFTER ES6
+class Car{
+    constructor(year, make , model,color, price){
+        this.year = year;
+        this.make = make;
+        this.color = color;
+        this.model = model;
+        this.price = price;
+    }
+    drive(){
+        //body  console.log(`${this.make} drives)
+    }
+}
+
+const car1 = new Car (2023, 'Tesla', 'White', 'X',80000);
+const car2 = naw Car (2023, 'BMW', 'Black', 'X8', 100000);
+
+car1.drive()
+car2stop()

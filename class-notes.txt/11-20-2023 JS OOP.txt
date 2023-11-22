@@ -1,0 +1,51 @@
+
+
+OOP: Object -oriented programming language-> putting all the real life object into programming
+Is Jas OOP?
+-Before ES^,Js was not providing the classes that enable OOP
+-After ES^,JS start to support OOP as well
+
+
+Each object has properties and functions
+properties: what object has
+Methods: what object does
+
+OOP languages: Java , C#,C++, Kotlin...
+Programmers stiill use JS without OOP,
+
+
+Banking application:
+
+Customer->creditScore, salary, name, adress
+CheckingAccount
+
+const customer1 ={
+    name : 'Alex'
+
+     creditCards : [
+        card1{
+            cardNumber :1234,
+            exp_date: 11/11
+            name : 'Alex'
+            security_code:123
+        }
+     ]
+
+    checking : {
+        routingNo:1234,
+        coountNo:1234,
+        balance25.5
+    },
+    address :{
+
+    }
+}
+
+Car app-Carbana,cars.com,mercedes.com
+const carTesla1 ={
+    VIN : 123456775
+    make:
+    model:
+    year:
+    price
+}

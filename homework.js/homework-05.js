@@ -190,6 +190,7 @@ function add(arr1, arr2) {
     return newArr
 };
 
+
 console.log(add([3, 0, 0, 7, 5, 10], [6, 3, 2]))
 console.log(add([10, 3, 6, 3, 2], [6, 8, 3, 0, 0, 7, 5, 10, 34]))
 console.log(add([-5, 6, -3, 11], [5, -6, 3, -11]))
@@ -197,7 +198,7 @@ console.log(add([-5, 6, -3, 11], [5, -6, 3, -11]))
 
 //Task-12
 function removeExtraSpaces(str) {
-    return str.split(' ').filter(s => s).join('')
+    return str.split(' ').filter(s => s).join(' ')
 }
 
 
@@ -209,7 +210,7 @@ console.log(removeExtraSpaces(''));
 
 //Task-13
 function findClosestTo10(arr5) {
-    let closestTo10 = [0];
+    let closestTo10 = 0;
 
     for (i = 1; i < arr5.length; i++) {
         if (Math.abs(arr5[i] - 10) < Math.abs(closestTo10 - 10)) {
@@ -221,9 +222,13 @@ function findClosestTo10(arr5) {
 }
 
 
-console.log(findClosestTo10([10, -13, 5, 70, 15, 57]))
-console.log(findClosestTo10([10, -13, 8, 12, 15, -20]))
-console.log(findClosestTo10([0, -1, -2]))
+
+console.log(findClosestTo10([10, -13, 5, 70, 15, 57])); // Output: 5
+console.log(findClosestTo10([10, -13, 8, 12, 15, -20])); // Output: 8
+console.log(findClosestTo10([0, -1, -2])); // Output: 0
+
+
+
 
 //Task-14
 
@@ -243,7 +248,7 @@ console.log(isEmailValid("johndoe@gmail.com"))
 //Task-15
 
 function isPasswordValid(password) {
-    if(password.includes('')) return false
+    if(password.includes(' ')) return false
     if (password.length >16 || password.length <8) return false
     if (!'abcdefghijklmnoprstuvyzxwq'.includes(password)
     || !'0123456789'.includes(password) 
