@@ -329,4 +329,3 @@ console.log(removeDuplicates1([0, -1, -2, -2, -1]));
 console.log(removeDuplicates1(["abc", "xyz", "123", "ab", "abc", "ABC"])); 
 console.log(removeDuplicates1(["1", "2", "3", "2", "3"])); 
 
-/
