@@ -373,9 +373,8 @@ secondMax([10]
 */
 
 const secondMax = (arr) => {
-    for(let i = 0; i<arr.length ;i++){
-        if()
-    }
+   
+        
 
 }
 
