@@ -350,17 +350,17 @@ isDateFormatValid("10/02/2020 ")
 const isDateFormatValid = (str) => {
 
 }
-console.log(isDateFormatValid("")); // Output: false
-console.log(isDateFormatValid("15/30/2020")); // Output: false
-console.log(isDateFormatValid("10-30-2020 ")); // Output: false
-console.log(isDateFormatValid("10.30.2020")); // Output: false
-console.log(isDateFormatValid("5/30/2020")); // Output: false
-console.log(isDateFormatValid("05/30/2020 ")); // Output: true
-console.log(isDateFormatValid("10/2/2020")); // Output: false
-console.log(isDateFormatValid("10/02/2020 ")); // Output: true
+console.log(isDateFormatValid("")); 
+console.log(isDateFormatValid("15/30/2020")); 
+console.log(isDateFormatValid("10-30-2020 ")); 
+console.log(isDateFormatValid("10.30.2020")); 
+console.log(isDateFormatValid("5/30/2020")); 
+console.log(isDateFormatValid("05/30/2020 ")); 
+console.log(isDateFormatValid("10/2/2020")); 
+console.log(isDateFormatValid("10/02/2020 ")); 
 
 //Task-11
-/* Write a method named secondMax() takes an array argument 
+/* Write a method named secondMax() takes an array argument c
 and returns the second max number from the array.
 NOTE: Assume that you will not be given empty array and if the 
 array has only 1 element, it will be returned as second max 
@@ -379,8 +379,8 @@ const secondMax = (arr) => {
 }
 
 
-console.log(secondMax([7, 4, 4, 4, 23, 23, 23])); // Output: 7
-console.log(secondMax([3, 4, 5, 6])); // Output: 5
+console.log(secondMax([7, 4, 4, 4, 23, 23, 23])); 
+console.log(secondMax([3, 4, 5, 6])); 
 console.log(secondMax([10])); 
 
 //Task-12
@@ -401,9 +401,9 @@ const secondMin = (arr) =>{
 }
 
 
-onsole.log(secondMin([7, 4, 4, 4, 23, 23, 23])); // Output: 7
-console.log(secondMin([3, 4, 5, 6])); // Output: 4
-console.log(secondMin([10])); // Output: 10
+console.log(secondMin([7, 4, 4, 4, 23, 23, 23])); 
+console.log(secondMin([3, 4, 5, 6])); 
+console.log(secondMin([10]));
 
 //Task-13
 /*Write a method named mostRepeated() takes an array argument and 
@@ -423,7 +423,7 @@ const mostRepeated = (arr) =>{
 
 }
 
-console.log(mostRepeated([4, 7, 4, 4, 4, 23, 23, 23])); // Output: 4
-console.log(mostRepeated(["pen", "pencil", "pen", "123", "abc", "pen", "pencil"])); // Output: "pen"
-console.log(mostRepeated([10])); // Output: 10
-console.log(mostRepeated(["TechGlobal"])); // Output: "TechGlobal"
+console.log(mostRepeated([4, 7, 4, 4, 4, 23, 23, 23])); 
+console.log(mostRepeated(["pen", "pencil", "pen", "123", "abc", "pen", "pencil"])); 
+console.log(mostRepeated([10])); 
+console.log(mostRepeated(["TechGlobal"])); 
