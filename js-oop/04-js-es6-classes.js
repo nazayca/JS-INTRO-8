@@ -21,11 +21,11 @@ const cat3 = new Cat('Oliver', 'Brown', 3)
 
 const allCats = [cat1, cat2, cat3]
 
-for (Cat of allCats) {
+for (cat of allCats) {
     console.log(Cat)
-    console.log('Names is', Cat.name)
-    console.log('Age is ' , Cat.age)
-    console.log('The color is ',Cat.color)
+    console.log('Names is', cat.name)
+    console.log('Age is ' , cat.age)
+    console.log('The color is ',cat.color)
     cat1.sleep()
     cat2.eat()
     cat3.makesSound()
@@ -34,4 +34,7 @@ for (Cat of allCats) {
 
 // store all the cats name in an array
 
-console.log(Cat.map(cat=>cat.name))
+console.log(allCats.map(cat => cat.name));
+
+// Store all the cats name that are older than 1 year -> [ 'Lucy', 'Oliver' ]
+console.log(allCats.filter(cat =>  cat.age > 1).map(cat => cat.name)); // [ 'Lucy', 'Oliver' ]

@@ -131,7 +131,7 @@ averageOfEdges(-2, -2, 10)  -> 4
 averageOfEdges(-3, 15, -3)  -> 6
 averageOfEdges(10, 13, 20)  -> 15
 */
-const averageOfEdges = ((num1 = 0, num2 = 0, num3 = 0) => (Math.max(num1, num2, num3) + Math.min(num1, num2, num3)) / 2)
+const averageOfEdges = ((num1, num2, num3) => (Math.max(num1, num2, num3) + Math.min(num1, num2, num3)) / 2)
 console.log(averageOfEdges(0, 0, 0))
 console.log(averageOfEdges(0, 0, 6))
 console.log(averageOfEdges(-2, -2, 10))
@@ -255,32 +255,23 @@ countPrimes([7, 4, 11, 23, 17])  -> 4
 countPrimes([41, 53, 19, 47, 67])  -> 5
 */
 
-const countPrimes = (...arr) =>{
-    let count = 0;
-    const isPrime = (num)=>{
-        if(num<2)return false;
-        if(num === 2 || num === 3)return false
-        if(num % 2 === 0 || num % 3 === 0)return false
-       
-        let d = 5;
-       while(d<num){
-        if(num % d === 0)return false;
-        d+=2
-       }
-        
-    }
-    for (const num of arr) {
-        if (isPrime(num)) {
-          count++;
-        }
-      }
-      return count;
-   
-}  
+const countPrime = (arr) => {
 
-console.log(countPrimes([-10, -3, 0, 1])); // Output: 0
-console.log(countPrimes([7, 4, 11, 23, 17])); // Output: 4
-console.log(countPrimes([41, 53, 19, 47, 67])); // Output: 5
+    return arr.filter(num => {
+      if(num < 2) return false;
+      if(num === 2) return true;
+      if(num % 2 === 0) return false
+  
+      for(let i = 3; i < num; i+=2){
+        if(num % i === 0) return false
+      }
+      return true;
+    }).length;
+  }
+  
+  console.log(countPrime([-10, -3, 0, 1]))
+  console.log(countPrime([7, 4, 11, 23, 17]))
+  console.log(countPrime([41, 53, 19, 47, 67]))
 
     
        
@@ -300,36 +291,37 @@ removeDuplicates(["abc", "xyz", "123", "ab", "abc", "ABC"])  -> ["abc", "xyz",
 "123", "ab", "ABC"]
 removeDuplicates(["1", "2", "3", "2", "3"]) 
 */
-const removeDuplicates = (arr) =>{
-    const newArr = [];
-    for(i = 0; i<arr.length ; i++){
-        if(newArr.indexOf(arr[i])=== -1){
-            newArr.push(arr[i])
-        }
-    }
-    return newArr
-}
 
-
-console.log(removeDuplicates([10, 20, 35, 20, 35, 60, 70, 60])); 
-console.log(removeDuplicates([1, 2, 5, 2, 3]));
-console.log(removeDuplicates([0, -1, -2, -2, -1])); 
-console.log(removeDuplicates(["abc", "xyz", "123", "ab", "abc", "ABC"])); 
-console.log(removeDuplicates(["1", "2", "3", "2", "3"])); 
-
-
-
-//OR
 const removeDuplicates1 = (arr) => {
-return [ ...new Set(arr)]
-}
+    let result = [];
+  
+    arr.forEach(i => {
+      if(!result.includes(i)) result.push(i)
+    })
+  
+    return result;
+  }
+
+
 console.log(removeDuplicates1([10, 20, 35, 20, 35, 60, 70, 60])); 
 console.log(removeDuplicates1([1, 2, 5, 2, 3]));
 console.log(removeDuplicates1([0, -1, -2, -2, -1])); 
 console.log(removeDuplicates1(["abc", "xyz", "123", "ab", "abc", "ABC"])); 
 console.log(removeDuplicates1(["1", "2", "3", "2", "3"])); 
 
-/Task-10
+
+
+//OR
+const removeDuplicates2 = (arr) => {
+return [ ...new Set(arr)]
+}
+console.log(removeDuplicates2([10, 20, 35, 20, 35, 60, 70, 60])); 
+console.log(removeDuplicates2([1, 2, 5, 2, 3]));
+console.log(removeDuplicates2([0, -1, -2, -2, -1])); 
+console.log(removeDuplicates2(["abc", "xyz", "123", "ab", "abc", "ABC"])); 
+console.log(removeDuplicates2(["1", "2", "3", "2", "3"])); 
+
+//Task-10
 /*Write a method named isDateFormatValid() that takes a 
 string as an argument and returns true if the given date is 
 valid or returns false otherwise.
@@ -347,17 +339,36 @@ isDateFormatValid("10/2/2020")  -> false
 isDateFormatValid("10/02/2020 ")
 */
 
-const isDateFormatValid = (str) => {
+const isDateFormatValid = (date) =>{
+    const dateAsArr = date.split('/')
+  
+    if(dateAsArr.length !== 3) return false;
+  
+    const month = date.split('/')[0]
+    const day = date.split('/')[1]
+    const year = date.split('/')[2]
+  
+    if(month.length !== 2 || day.length !== 2 || year.length !== 4) return false;
+  
+    if(Number(month) < 1 || Number(month) > 12) return false
+  
+    if(Number(day) < 1) return false;
+  
+    if(Number(year) < 1) return false;
+  
+    if(Number(month) === '01')
+    return true;
+  }
 
-}
-console.log(isDateFormatValid("")); 
-console.log(isDateFormatValid("15/30/2020")); 
-console.log(isDateFormatValid("10-30-2020 ")); 
-console.log(isDateFormatValid("10.30.2020")); 
-console.log(isDateFormatValid("5/30/2020")); 
-console.log(isDateFormatValid("05/30/2020 ")); 
-console.log(isDateFormatValid("10/2/2020")); 
-console.log(isDateFormatValid("10/02/2020 ")); 
+  console.log(isDateFormatValid(""));  // false
+  console.log(isDateFormatValid("15/30/2020"));  // false
+  console.log(isDateFormatValid("10-30-2020"));  // false
+  console.log(isDateFormatValid("10.30.2020"));  // false
+  console.log(isDateFormatValid("5/30/2020"));  // false
+  console.log(isDateFormatValid("05/30/2020"));  // true
+  console.log(isDateFormatValid("10/2/2020"));  // false
+  console.log(isDateFormatValid("10/02/2020"));  // true
+
 
 //Task-11
 /* Write a method named secondMax() takes an array argument c
@@ -373,15 +384,34 @@ secondMax([10]
 */
 
 const secondMax = (arr) => {
-   
-        
-
-}
-
-
-console.log(secondMax([7, 4, 4, 4, 23, 23, 23])); 
-console.log(secondMax([3, 4, 5, 6])); 
-console.log(secondMax([10])); 
+    const sortedArr = arr.sort((a,b) => b - a)
+  
+    for(num of sortedArr){
+      if(num !== sortedArr[0]) return num;
+    }
+    return sortedArr[0]
+  }
+  
+    //WITHOUT USING SORT
+    // let max = arr[0];
+    // let secondMax;
+  
+    // for(num of arr){
+    //   if(num > max){
+    //     secondMax = max;
+    //     max = num;
+    //   }else {
+    //     if(num > secondMax && num !== max)
+    //     secondMax = num;
+    //   }
+    // }
+  
+    // return secondMax || max
+    
+  console.log(secondMax([7, 4, 4, 4, 23, 23, 23]))
+  console.log(secondMax([3, 4, 5, 6]))
+  console.log(secondMax([10]))
+ 
 
 //Task-12
 /*Write a method named secondMin() takes an array argument 
@@ -396,14 +426,20 @@ secondMax([3, 4, 5, 6])  -> 4
 secondMax([10])  -> 10
 */
   
-const secondMin = (arr) =>{
+const secondMin = (arr) => {
+    arr = arr.sort((a, b) => a - b)
+    
+    for(num of arr){
+        if(num !== arr[0]) return num;
+    }
+  
+    return arr[0]
+  }
+    
+  console.log(secondMin([7, 4, 4, 4, 23, 23, 23]))
+  console.log(secondMin([3, 4, 5, 6]))
+  console.log(secondMin([10]))
 
-}
-
-
-console.log(secondMin([7, 4, 4, 4, 23, 23, 23])); 
-console.log(secondMin([3, 4, 5, 6])); 
-console.log(secondMin([10]));
 
 //Task-13
 /*Write a method named mostRepeated() takes an array argument and 
@@ -419,11 +455,27 @@ mostRepeated(["TechGlobal"])  ->
 "TechGlobal"
 */ 
 
-const mostRepeated = (arr) =>{
+const mostRepeated = (arr) => {
+  let counts = {}
+  let largestCount = 0;
+  let mostRepeated;
 
+  for(el of arr){
+    if(counts[el]){
+        counts[el]++;
+    }else{
+        counts[el] = 1
+    }
+
+    if(counts[el] > largestCount){
+        largestCount = counts[el]
+        mostRepeated = el;
+    }
+  }
+  return mostRepeated
 }
 
-console.log(mostRepeated([4, 7, 4, 4, 4, 23, 23, 23])); 
-console.log(mostRepeated(["pen", "pencil", "pen", "123", "abc", "pen", "pencil"])); 
-console.log(mostRepeated([10])); 
-console.log(mostRepeated(["TechGlobal"])); 
+console.log(mostRepeated([4, 7, 4, 4, 4, 23, 23, 23]));  // 4
+console.log(mostRepeated(["pen", "pencil", "pen", "123", "abc", "pen", "pencil"]));  // "pen"
+console.log(mostRepeated([10]));  // 10
+console.log(mostRepeated(["TechGlobal"]));  // "TechGlobal"
