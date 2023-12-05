@@ -21,47 +21,47 @@ PSEDUO CODE - APPROACH
     else print false
 */
 
-const num1 = Math.floor(Math.random() * 10) + 1; 
-const num2 = Math.floor(Math.random() * 10) + 1; 
+const num1 = Math.floor(Math.random() * 10) + 1;
+const num2 = Math.floor(Math.random() * 10) + 1;
 
 const sum = num1 + num2;
 
-if(sum % 2 === 0) console.log(true);
+if (sum % 2 === 0) console.log(true);
 else console.log(false);
 
 // We can simplify this if-else
 console.log(((Math.floor(Math.random() * 10) + 1) + (Math.floor(Math.random() * 10) + 1)) % 2 === 0);
 
-for ( let i = 0; i<5;i++){
-   console.log( "Hello World")
+for (let i = 0; i < 5; i++) {
+    console.log("Hello World")
 };
 
-for (let i = 1; i<=5; i++){
-    if(i % 2 !==0) console.log("Hello World")
+for (let i = 1; i <= 5; i++) {
+    if (i % 2 !== 0) console.log("Hello World")
 }
- for (let i = 5; i>=1; i--){
-    if(i % 2 !==0) console.log("Hello World",)
- }
-for (let i = 0; i<8; i++){
-    if( i %2===0) console.log('Hi Ayca',i);
+for (let i = 5; i >= 1; i--) {
+    if (i % 2 !== 0) console.log("Hello World",)
+}
+for (let i = 0; i < 8; i++) {
+    if (i % 2 === 0) console.log('Hi Ayca', i);
 }
 
-const colours =['Red', 'Blue', 'Yellow', 'Purple','Orange'];
+const colours = ['Red', 'Blue', 'Yellow', 'Purple', 'Orange'];
 
 let colour = 0;
- while (colour < colours.length){
+while (colour < colours.length) {
     console.log(`${colours[colour]}`);
     colour++
- }
-
- const names = "TechGlobal School";
-for(let i = 0; i< names.length; i++){
-console.log(names[i]);
 }
 
-let random = Math.floor(Math.random()*(10)+1);
-for( let i = 1; i<= random; i++){
-    if (i %2!==0)console.log(i)
+const names = "TechGlobal School";
+for (let i = 0; i < names.length; i++) {
+    console.log(names[i]);
+}
+
+let random = Math.floor(Math.random() * (10) + 1);
+for (let i = 1; i <= random; i++) {
+    if (i % 2 !== 0) console.log(i)
 }
 
 

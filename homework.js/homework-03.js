@@ -1,154 +1,220 @@
-//Task 1
-let ranNum1 = Math.floor(Math.random()*(100-1+1)+1);
-let ranNum2 = Math.floor(Math.random()*(100-1+1)+1);
-let ranNum3 = Math.floor(Math.random()*(100-1+1)+1); 
-let avaregeOf = (ranNum1 + ranNum2 + ranNum3)/3
- if (avaregeOf <= 50){
-    console.log( `True ${avaregeOf}`)
+//Task-01
+/*
+Write a  program that generates 3 random numbers 
+between 1 to 100 (1 and 100 are included)
+Print true if the average of the random numbers is 
+greater or equals 50. 
+Print false if the average of the random numbers is less 
+than 50.
+*/
 
- }
- else{
-    console.log(`False ${avaregeOf}`)
- }
+let num1 = Math.floor(Math.random() * 100)+1;
+let num2 = Math.floor(Math.random() * 100)+1;
+let num3= Math.floor(Math.random() * 100)+1;
+let average = Math.floor((num1 + num2 + num3) / 3);
+console.log(average, average >= 50 ? true : false);
 
- //Task2
+//Task-02
+/*
+Write a  program that generates 3 random numbers 
+between 1 to 3 (1 and 3 are included)
+-If all numbers are different, then print “NO MATCH”
+-If any of those 2 numbers are equal, then print 
+“DOUBLE MATCH”
+-If all 3 numbers are equal, then print “TRIPLE MATCH
+*/
 
- let randomNum1 = Math.floor(Math.random()*(3-1+1)+1);
- let randomNum2 = Math.floor(Math.random()*(3-1+1)+1);
- let randomNum3 = Math.floor(Math.random()*(3-1+1)+1);
+let rand1 = Math.floor((Math.random() * 3) + 1);
+let rand2 = Math.floor((Math.random() * 3) + 1);
+let rand3 = Math.floor((Math.random() * 3) + 1);
 
- if(randomNum1===randomNum2 && randomNum2 ===randomNum3){
-    console.log(`${randomNum1} , ${randomNum2}, ${randomNum3} TRIPLE MATCH`)
- }
- else if (randomNum1===randomNum2|| randomNum1===randomNum3 || randomNum2===randomNum3){
-    console.log(`${randomNum1} , ${randomNum2}, ${randomNum3} DOUBLE MATCH`)
- }
- else{
-    console.log(`${randomNum1} , ${randomNum2}, ${randomNum3} NO MATCH`)
- }
- 
- //Task 3
- let str;
-    function hasA(str){
-        if(str.includes('a')|| str.includes('A')){
-            return "True"
-        }
-        else{
-            return "False"
-        }
-    }
-  console.log(`hasA("Tech")--> ${hasA("Tech")}`)  ;
-  console.log(`hasA("Global")--> ${hasA("Global")}`)  ;
-  console.log(`hasA("")--> ${hasA("")}`)  ;
-  console.log(`hasA(" ")--> ${hasA("Apple")}`)  ;
+console.log(`${rand1} ${rand2} ${rand3} `)
 
-  //Task 4
-    let string; 
-  function doubleOrTrippleWord(string){
-    if (string.length %2 === 0){
-        return string.repeat(3)
-    }
-    else{
-      return string.repeat(2)
-    }
-  }
- console.log(`doubleOrTripleWord("Tech") --> ${doubleOrTrippleWord("Tech")}`);
- console.log(`doubleOrTripleWord("Apple") --> ${doubleOrTrippleWord("Apple")}`);
- console.log(`doubleOrTripleWord("") --> ${doubleOrTrippleWord("")}`);
- console.log(`doubleOrTripleWord(" ") --> ${doubleOrTrippleWord(" ")}`);
- console.log(`doubleOrTripleWord("1") --> ${doubleOrTrippleWord("1")}`);
- console.log(`doubleOrTripleWord("22") --> ${doubleOrTrippleWord("22")}`);
- 
+if(rand1 === rand2 && rand2 === rand3) console.log('TRIPLE MATCH');
+else if(rand1 !== rand2 && rand2 !== rand3) console.log('NO MATCH')
+else console.log('DOUBLE MATCH');
 
- //Task 5
+//Task-03
+/*
+Write a function named as hasA() which takes a string 
+word as an argument and returns true if given string 
+has a character "a" or "A", and false otherwise when 
+invoked.
+NOTE: Assume you will not be given an empty word.
+Examples:
+hasA("Tech")  -> false
+hasA("Global")  -> true
+hasA("")  -> false
+hasA("Apple")  -> true
+*/
 
- let word ;
-function firstWord(word){
-return word.split(' ')[0];
+const hasA = (str) =>{
+   return str.includes('a') || str.includes('A')
+   
 }
 
-console.log(`firstWord("Hello World")--> ${firstWord("Hello World")}`);
-console.log(`firstWord("I like JavaScript")--> ${firstWord("I like JavaScript")}`);
-console.log(`firstWord("Hello")--> ${firstWord("Hello")}`);
-console.log(`firstWord("")--> ${firstWord("")}`);
-console.log(`firstWord(" ")--> ${firstWord(" ")}`);
+console.log(hasA("Tech"));     // Output: false
+console.log(hasA("Global"));   // Output: true
+console.log(hasA(""));         // Output: false
+console.log(hasA("Apple"));    // Output: true
 
+//Task-04
+/*
+Write a function named as doubleOrTripleWord() 
+which takes a string word as an argument and returns 
+the given word back tripled if the string length is even 
+or doubled if the string length is odd when invoked.
+Examples:
+doubleOrTripleWord("Tech")  -> "TechTechTech"
+doubleOrTripleWord("Apple")  -> "AppleApple”
+doubleOrTripleWord("")  -> ""
+doubleOrTripleWord(" ")  -> " "
+doubleOrTripleWord("1")  -> "11"
+doubleOrTripleWord("22")  -> "222222"
+*/
 
-//Task-6
-
-let word2 ;
-function lastWord(word2){
-   return word2.split(' ').pop();
+const doubleOrTripleWord = (str) =>{
+   if(str === '') return '';
+   if(str.length % 2 === 0)return str + str + str;
+   else return str + str
 }
-console.log(`lastWord ("Hello World")-->${ lastWord("Hello World")}`);
-console.log(`lastWord ("I like JavaScript")-->${ lastWord("I like JavaScript")}`);
-console.log(`lastWord ("Hello")-->${ lastWord("Hello")}`);
-console.log(`lastWord ("")-->${ lastWord("")}`);
-console.log(`lastWord (" ")-->${ lastWord(" ")}`);
+console.log(doubleOrTripleWord("Tech"));   // Output: "TechTechTech"
+console.log(doubleOrTripleWord("Apple"));  // Output: "AppleApple"
+console.log(doubleOrTripleWord(""));       // Output: ""
+console.log(doubleOrTripleWord(" "));      // Output: " "
+console.log(doubleOrTripleWord("1"));      // Output: "11"
+console.log(doubleOrTripleWord("22"));     // Output: "222222"
 
+//Task-05
+/*
+Write a function named as firstWord() which takes a 
+string word as an argument and returns the first word 
+from the given string when invoked.
+NOTE: Return empty string if the given string does not 
+have any word.
+Examples:
+firstWord("Hello World")  -> "Hello"
+firstWord("I like JavaScript")  -> "I"
+firstWord("Hello")  -> "Hello"
+firstWord("")  -> ""
+firstWord("    ")  -> 
+*/
 
-// Task-7
-let str2;
-function firstLastWord(str2){
-  return (`${str2.split(' ')[0]}${str2.split(' ').pop()}`);
+const firstWord = (str) =>{
+   if(str === '') return '';
+   else return str.trim().split(' ')[0]
 }
-console.log(`firstLastWord(" Hello World") -->${firstLastWord("Hello World")}`);
-console.log(`firstLastWord(" I like JavaScript") -->${firstLastWord("I likeJavaScript")}`);
-console.log(`firstLastWord(" Hello") -->${firstLastWord("Hello")}`);
-console.log(`firstLastWord("") -->${firstLastWord("")}`);
-console.log(`firstLastWord(" ") -->${firstLastWord(" ")}`);
+console.log(firstWord("Hello World"));        // Output: "Hello"
+console.log(firstWord("I like JavaScript")); // Output: "I"
+console.log(firstWord("Hello"));              // Output: "Hello"
+console.log(firstWord(""));                   // Output: ""
+console.log(firstWord("    "));               // Output: ""
 
-//Task-8
+//Task-06
+/*
+Write a function named as lastWord() which takes a 
+string word as an argument and returns the last word 
+from the given string when invoked.
+NOTE: Return empty string if the given string does not 
+have any word.
+Examples:
+lastWord("Hello World")  -> "World"
+lastWord("I like JavaScript")  -> "JavaScript”
+lastWord("Hello")  -> "Hello"
+lastWord("")  -> ""
+lastWord("    ")  -> ""
+*/
 
-let str3;
-function startVowel(str3){
-   if (str3.startsWith('a')||str3.startsWith('A')||str3.startsWith('e')||str3.startsWith('E')||str3.startsWith('i')||str3.startsWith('I')||str3.startsWith('o')||str3.startsWith('O')||str3.startsWith('u')||str3.startsWith('U')){
-      return "True"
-   }
-  
-else{
-   return "False"
+const lastWord = (str) =>{
+   if(str === '') return '';
+   else return str.split(' ').slice(-1).join(' ')
 }
-};
-console.log(`startVowel("Hello") --> ${startVowel("Hello")}`);
-console.log(`startVowel("Apple") --> ${startVowel("Apple")}`);
-console.log(`startVowel("orange") --> ${startVowel("orange")}`);
-console.log(`startVowel("") --> ${startVowel("")}`);
-console.log(`startVowel(" ") --> ${startVowel(" ")}`);
-console.log(`startVowel("123") --> ${startVowel("123")}`);
+console.log(lastWord("Hello World"));        // Output: "World"
+console.log(lastWord("I like JavaScript")); // Output: "JavaScript"
+console.log(lastWord("Hello"));              // Output: "Hello"
+console.log(lastWord(""));                   // Output: ""
+console.log(lastWord("    "));               // Output: ""
 
-//Task-9
-let str4;
-function swap4(str4){
-   if(str4.length<4){
-      return "";
-   }
-   else{
-      const first4 = str4.slice(0,4);
-      const last4 = str4.slice(-4);
-      const middle = str4.slice(4,-4);
-      const swappedWord = last4 + middle + first4;
-      return swappedWord;
-   }
-};
-   console.log(`swap4("abc") --> ${swap4("abc")}`);
-   console.log(`swap4("JavaScript")--> ${swap4("JavaScript")}`);
-   console.log(`swap4("TechGlobal")--> ${swap4("TechGlobal")}`);
-   console.log(`swap4("")--> ${swap4("")}`);
-   console.log(`swap4(" ")-->) ${swap4(" ")}`);
-   console.log(`swap4("Apple")--> ${swap4("Apple")}`);
-  
+//Task-07
+/*
+Write a function named as firstlastWord() which takes 
+a string word as an argument and returns the first and 
+last words from the given string when invoked.
+NOTE: Return empty string if the given string does not 
+have any word.
+Examples:
+firstLastWord("Hello World")  -> "HelloWorld"
+firstLastWord("I like JavaScript")  -> "IJavaScript”
+firstLastWord("Hello")  -> "HelloHello"
+firstLastWord("")  -> ""
+firstLastWord("    ")  -> ""
+*/
 
+const firstLastWord = (str) =>{
+   if(str === '') return '';
+   else return str.trim().split(' ')[0] + str.trim().split(' ').slice(-1)
+}
+console.log(firstLastWord("Hello World"));        // Output: "HelloWorld"
+console.log(firstLastWord("I like JavaScript")); // Output: "IJavaScript"
+console.log(firstLastWord("Hello"));              // Output: "HelloHello"
+console.log(firstLastWord(""));                   // Output: ""
+console.log(firstLastWord("    "));               // Output: ""
 
-//Task-10
- let str5 = " foo bar foo bar"
- function swapFirstLastWord(str5){
-   const firstWord = str5.slice(0, str5.indexOf(" "));
-   const lastWord = str5.slice(str5.lastIndexOf(" ")+1);
-   const middleWord = str5.slice(str5.indexOf(" "), str5.lastIndexOf(" ")+1);
+//Task-08
+/*
+Write a function named as startVowel() which takes a 
+string word as an argument and returns true if given 
+string starts with a vowel, and false otherwise when 
+invoked.
+NOTE: Vowel letters: a, e, i o, u, A, E, I, O, U 
+Examples:
+startVowel("Hello")  -> false
+startVowel("Apple") -> true
+startVowel("orange")  -> true
+startVowel("")  -> false
+startVowel("    ")  -> false
+startVowel("123")  -> false
+*/
 
-  return str5 = lastWord + middleWord +firstWord
+const startVowel = (str) =>{
+   if('aeiouAEIOU'.includes(str[0]))return true
+   else return false
 }
 
-console.log(swapFirstLastWord("foo bar foo bar"));
+console.log(startVowel("Hello"));   // Output: false
+console.log(startVowel("Apple"));   // Output: true
+console.log(startVowel("orange"));  // Output: true
+console.log(startVowel(""));        // Output: false
+console.log(startVowel("    "));    // Output: false
+console.log(startVowel("123"));     // Output: false
 
+//Task-09
+/*
+Write a function named as swap4() which takes a 
+string word as an argument and returns the string back 
+with its first and last 4 characters swapped when 
+invoked.
+NOTE: Return empty string if the given string does not 
+have 8 or more characters.
+Examples:
+swap4("abc")  -> ""
+swap4("JavaScript")  -> "riptScJava"
+swap4("TechGlobal")  -> "obalGlTech"
+swap4("")  -> ""
+swap4("    ")  -> ""
+swap4("Apple")  -> ""
+*/
+
+const swap4 = (str) =>{
+   const first4Char = str.slice(0,4);
+   const last4Char = str.slice(-4);
+   const middleChar = str.slice(4,-4);
+   if(str.length < 8) return '';
+   else return last4Char + middleChar + first4Char
+}
+console.log(swap4("abc"));         // Output: ""
+console.log(swap4("JavaScript"));  // Output: "riptScJava"
+console.log(swap4("TechGlobal"));  // Output: "obalGlTech"
+console.log(swap4(""));            // Output: ""
+console.log(swap4("    "));        // Output: ""
+console.log(swap4("Apple"));       // Output: ""

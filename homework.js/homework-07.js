@@ -9,12 +9,12 @@ hasUpperCase("$125.0")  -> false
 hasUpperCase("")  -> false
 */
 
-const hasUpperCase = (str) =>{
-    for(let i = 0; i < str.length; i++){
-        if(str.charAt(i)=== str.charAt(i).toUpperCase() && str.charAt(i) !== str.charAt(i).toLowerCase())return true;
-    }
-   return false;
-}
+const hasUpperCase = (str) => str.split('').filter(i => i >= 'A' && i <= 'Z').length > 0
+//     for(let i = 0; i < str.length; i++){
+//         if(str.charAt(i)=== str.charAt(i).toUpperCase() && str.charAt(i) !== str.charAt(i).toLowerCase())return true;
+//     }
+//    return false;
+// }
 console.log(hasUpperCase("javascript"));  // false
 console.log(hasUpperCase("John"));        // true
 console.log(hasUpperCase("$125.0"));     // false
@@ -32,16 +32,21 @@ noDigit("123Hello World149")  -> "Hello World”
 noDigit("123Tech456Global149")  
 */
 
-const noDigit = (str) =>{
- let result = '';
 
- for(const letter of str){
-    if(!'0123456789'.includes(letter)){
-        result+= letter
-    }
- }
- return result;
-}
+
+
+// const noDigit = (str) =>{
+//  let result = '';
+
+//  for(const letter of str){
+//     if(!'0123456789'.includes(letter)){
+//         result+= letter
+//     }
+//  }
+//  return result;
+// }
+
+const noDigit = (str) => str.split('').filter(i => i < '0' || i > '9').join('');
 
 console.log(noDigit(""));  // ""
 console.log(noDigit("Javascript"));  // "Javascript"
@@ -61,15 +66,17 @@ noVowel("")  -> ""
 noVowel("125$")  -> "125$"
 */
 
-const noVowel = (str) =>{
-    let result = '';
-    for(const letters of str){
-        if(!'AEOUIaeoui'.includes(letters)){
-            result+= letters
-        }
-    }
-    return result;
-}
+// const noVowel = (str) =>{
+//     let result = '';
+//     for(const letters of str){
+//         if(!'AEOUIaeoui'.includes(letters)){
+//             result+= letters
+//         }
+//     }
+//     return result;
+// }
+
+const noVowel = (str) => str.split('').filter(i => !('aeiou'.includes(i.toLowerCase()))).join('');
 
 
 console.log(noVowel("TechGlobal"));  // "TchGlbl"
@@ -133,16 +140,16 @@ sumOfDigits("$125.0")  -> 8
 sumOfDigits("")  -> 0
 */
 
-const sumOfDigits = (str) =>{
-    let sum = 0
-    for(const char of str){
-        if('0123456789'.includes(char)){
-            sum += Number(char)
-        }
-    }
-    return sum;
-}
-
+// const sumOfDigits = (str) =>{
+//     let sum = 0
+//     for(const char of str){
+//         if('0123456789'.includes(char)){
+//             sum += Number(char)
+//         }
+//     }
+//     return sum;
+// }
+const sumOfDigits = (str) => str.split('').filter(i => i >= '0' && i <= '9').reduce((sum, num) => sum += Number(num), 0)
 
 console.log(sumOfDigits("Javascript"));        // 0
 console.log(sumOfDigits("John's age is 29")); // 11
@@ -159,16 +166,25 @@ arrFactorial([0, 5])  -> [1,120]
 arrFactorial([5 , 0, 6])  -> [120, 1, 720]
 arrFactorial([]
 */
-const arrFactorial = (arr) => {
-    const calculateFactorial = (num) => {
-        if (num === 0 || num === 1) return 1;
-        return num * calculateFactorial(num - 1);
-    };
+// const arrFactorial = (arr) => {
+//     const calculateFactorial = (num) => {
+//         if (num === 0 || num === 1) return 1;
+//         return num * calculateFactorial(num - 1);
+//     };
 
-    return arr.map(num => calculateFactorial(num));
-};
+//     return arr.map(num => calculateFactorial(num));
+// };
     
-  
+const arrFactorial = (arr) =>{
+    return arr.map(num => {
+        let fac = 1;
+        for(let i = 2; i <=num; i++){
+            fac *= i;
+        }
+        return fac;
+    })
+    
+}
 
 console.log(arrFactorial([1, 2, 3, 4]));   // [1, 2, 6, 24]
 console.log(arrFactorial([0, 5]));         // [1, 120]
@@ -183,7 +199,7 @@ specials at index of 2.
 Examples:
 categorizeCharacters("1234")  -> [ '' , '1234', '' ] 
 categorizeCharacters("abc123$#%")  -> [ 'abc', '123', '$#%' ]
-categorizeCharacters("12ab$%3c%") --> [ 'ab', '123', '$%c%' ]
+categorizeCharacters("12ab$%3c%") --> [ 'abc', '123', '$%%' ]
 */
 
 const categorizeCharacters = (str) =>{
@@ -199,7 +215,14 @@ const categorizeCharacters = (str) =>{
     return [letters.join(''), digits.join(''), specials.join('')]
 
 }
-
+// const categorizeCharacters = (str) => {
+//     return str.split('').reduce((cat, i) => {
+//         if(i.toLowerCase() >= 'a' && i.toLowerCase() <= 'z') cat[0] += i;
+//         else if(i >= '0' && i <= '9') cat[1] += i;
+//         else cat[2] += i;
+//         return cat;
+//     }, ['','',''])
+// }
 
 console.log(categorizeCharacters("1234"));  // Output: [ '', '1234', '' ]
 console.log(categorizeCharacters("abc123$#%"));  // Output: [ 'abc', '123', '$#%' ]

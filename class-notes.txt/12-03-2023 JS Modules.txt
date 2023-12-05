@@ -1,0 +1,137 @@
+
+
+
+12-03-2023 JS Modules
+
+Js Modules are used to increase code reusability within a framework.project as it allows creating reusable 
+components in a file and export it to be used by other files.
+Other files can import these reusable components and use.
+
+There are 2 ways to achieve this reusability.
+1. CommonJS (BEFORE ES6)
+    module.exports is used to export components (properties, functions, classes)
+    require is used to import reusable components in another file 
+
+2. ES6 Modules 
+    export 
+    import 
+
+fileA.js
+    // properties - information
+    const username = 'johndoeX';
+    const password = 'test1234';
+    const appURL = 'www.amazon.com';
+
+
+    // functions 
+    const login = (username, password) => {
+        // Login code
+    }
+
+
+
+
+fileB.js
+
+ Test 1:
+ Go to amazon.com
+ Login with username and password 
+ Validate you can purchase product   
+
+
+fileC.js
+Test 2:
+ Go to amazon.com
+ Login with username and password 
+ Validate you can see all the previous orders
+
+
+fileD.js
+Test 3:
+ Go to amazon.com
+ Login with username and password 
+ Validate you can change your password
+
+
+fileE.js
+Test 4:
+ Go to amazon.com
+ Login with username and password 
+ Validate you can update your address
+
+
+
+HOW TO EXPORT properties and functions with CommonJS?
+WAY 1 - individual exports 
+module.exports.password = password;
+module.exports.username = username;
+module.exports.appURL = appURL;
+module.exports.login = login;
+
+
+WAY 2 - exporting as an object
+const loginInfo = {
+    username,
+    password,
+    appURL,
+    login
+};
+
+module.exports.loginInfo = loginInfo;
+
+
+WAY 2 - Improved
+module.exports.loginInfo = {
+    username,
+    password,
+    appURL,
+    login
+};
+
+
+HOW TO IMPORT properties and functions with CommonJS?
+WAY 1 - individual imports 
+const {password, username, appURL, login} = require('./fileA');
+
+console.log(username);
+console.log(password);
+login();
+
+WAY 2 - importing as an object
+const loginInfo = require('./fileA');
+
+console.log(loginInfo.username);
+console.log(loginInfo.password);
+console.log(loginInfo.appURL);
+loginInfo.login();
+
+
+ES6 Modules
+- it is added a little bit of syntatic sugar on previous CommonJS Modules
+- CommonJs is supported with older version mostly with Node
+- ES6 is supported by new versions of Node and all the modern browsers
+
+        export isused to export reusable components from a file
+        import ... from is used to import reusable componants
+
+
+Java - import
+C#   - using
+JS   - require
+JS   - import
+
+fileDriver.js 
+// properties
+const driverName = 'chrome'
+
+functions
+function quitDriver(){
+    //quitting driver
+
+}
+
+functions gerDriver(){
+    getting driver
+}
+
+you can 

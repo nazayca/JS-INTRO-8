@@ -58,7 +58,7 @@ console.log(MathStudent.numberOfMathStudents); // 3
 console.log(ScienceStudent.numberOfScienceStudent); // 1
 
 // 8. Print information of each student
-const students = [ student1, student2, student3, student4 ]; 
+const students = [student1, student2, student3, student4];
 
 // for(const student of students) {
 //     console.log(student);
@@ -87,12 +87,34 @@ console.log(students.reduce((count, student) => student.className === 'Science' 
 
 let oldest = students[0]; // 'John', 'Doe', 23, 'M', 'Math'
 
-for(const student of students) {
-    if(student.age > oldest.age) oldest = student; // Became Alex
+for (const student of students) {
+    if (student.age > oldest.age) oldest = student; // Became Alex
 }
 
 console.log(`${oldest.fname} ${oldest.lname} is oldest with the age of ${oldest.age}.`); // Alex Smith is oldest with the age of 30.
 
 
-const oldestWithReduce = students.reduce((oldest, student) => oldest.age > student.age ? oldest : student , students[0]);
+const oldestWithReduce = students.reduce((oldest, student) => oldest.age > student.age ? oldest : student, students, {});
 console.log(`${oldestWithReduce.fname} ${oldestWithReduce.lname} is oldest with the age of ${oldestWithReduce.age}.`);
+
+const youngestS = students.reduce((youngest, student) => youngest.age < student.age ? youngest : student, students[0]);
+console.log(`${youngestS.fname} ${youngestS.lname} is the youngest with the age of ${youngestS.age}`)
+
+const sumAge = students.reduce((sum, student) => sum += student.age, 0)
+console.log(sumAge / students.length)
+
+console.log(students.filter((student) => student.className === 'Math').map((student) => (`${student.fname} ${student.lname}`)))
+
+console.log(students.filter((student) => student.gender === 'M').map((student) => student.fname))
+
+console.log(students.filter((student) => student.age > 20).map((student) => student.lname))
+
+const maleStudentsFName = students.reduce((result, student)=>{
+      if(student.gender === 'M'){
+        result.push(student.fname)
+      }
+      return result
+},[])
+console.log(maleStudentsFName)
+
+
