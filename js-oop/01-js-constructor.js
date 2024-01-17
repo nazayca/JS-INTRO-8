@@ -175,3 +175,7 @@ console.log(students.filter((student) => student.lName === 'Smith').length)
 
 const aCount = students.filter((student) => student.fName.toLowerCase().startsWith('a')).length
 console.log(aCount)
+
+
+  
+  

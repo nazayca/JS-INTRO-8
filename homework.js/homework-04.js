@@ -176,6 +176,14 @@ console.log(reverseStringWords(" "));
 
 
 //Task-18
+/*
+write a function named as getEvens() which takes 2 numbers  arguments and returns all the 
+even numbers as an array stored from theh smallest even number to greatest number when invoked
+
+NOTE: Make your code dynamic that works for any numbers and return empty array if there are no even numbers 
+in the range of given 2 numbers
+Assume you will not be given negative numbers
+*/
 
 function getEvens(num1, num2) {
     let evens = [];
@@ -207,7 +215,19 @@ console.log(getMultipleOf5(5, 5));
 console.log(getMultipleOf5(2, 4));
 
 //Task-20
-
+/*
+Write a function named as fizzBuzz() which takes 2 number arguments and returns a string 
+composed with below requirements when invoked.
+•You need to find all the numbers within the range of given 2 numbers (both inclusive)
+ and store them in a string from smallest to greatest number with a ' | ' separator 
+ for each number.
+•You will need to convert numbers divisible by 3 to 'Fizz'
+•You will need to convert numbers divisible by 5 to 'Buzz'
+•You will need to convert numbers divisible by both 3 and 5 to 'FizzBuzz’
+•The rest will stay the same.
+NOTE: Make your code dynamic that works for any numbers.
+Assume you will not be given negative numbers
+*/
 function fizzBuzz(x, y) {
     let str = '';
     for (let i = Math.min(x, y); i <= Math.max(x, y); i++) {

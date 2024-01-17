@@ -58,6 +58,14 @@ console.log(countVowels(""));
 
 //Task-4
 
+/*
+Write a function named as countConsonants() which takes a 
+string word as an argument and returns the count of the 
+consonant letters when invoked.
+NOTE: A letter that is not vowel is considered as a consonant 
+letter.
+*/
+
 function countConsonants(str2) {
     let countLetter = 0;
     for (char of str2) {
@@ -67,12 +75,8 @@ function countConsonants(str2) {
     }
     return countLetter
 }
-console.log(countConsonants("Hello"));
-console.log(countConsonants("Hello World"));
-console.log(countConsonants("JavaScript is fun"));
-console.log(countConsonants(""));
 
-/*function countConsonants(str2) {
+function countConsonants(str2) {
     let countLetter = 0;
     for (char of str2) {
         if (!'AEOUIaeoui'.includes(char) && !' '.includes(char)) {
@@ -80,7 +84,13 @@ console.log(countConsonants(""));
         }
     }
     return countLetter
-} -------------> if you dont want to count spaces*/
+}
+
+console.log(countConsonants("Hello"));
+console.log(countConsonants("Hello World"));
+console.log(countConsonants("JavaScript is fun"));
+console.log(countConsonants(""));
+// -------------> if you dont want to count spaces*/
 
 //Task-5
 
@@ -107,6 +117,15 @@ console.log(factorial(1));
 
 //Task-7
 
+/*
+Write a function named as isPalindrome() which takes a 
+string word as an argument and returns true if the word is 
+palindrome or returns false otherwise when invoked.
+NOTE: Palindrome: It is a word that is read the same backward 
+as forward
+Examples: kayak, civic, madam
+NOTE: your function should ignore case sensitivity
+*/
 function isPalindrome(word) {
     if (word.toLowerCase() === word.toLowerCase().split('').reverse().join('')) return true;
     else return false;
@@ -123,6 +142,12 @@ console.log(isPalindrome("A"));
 console.log(isPalindrome(""));
 
 //Task-8
+/*Write a function named as countMultipleWords() which takes 
+an array as an argument and returns the count of the elements 
+that has multiple words when invoked.
+NOTE: Be careful about the extra whitespaces before and after 
+the array element.
+*/
 
 function countMultipleWords(arr) {
     let multipleWords = 0;
@@ -161,6 +186,17 @@ console.log(count3orLess("My name is Jhon Doe"));
 console.log(count3orLess(""));
 
 //Task-10
+/*Write a function named as isPrime() which takes a 
+number as an argument and returns true if the number 
+is prime or returns false otherwise when invoked.
+NOTE: Mathematically, Prime number is a number that 
+can be divided only by itself and 1. It cannot be divided 
+by any other number. The smallest prime number is 2 
+and 2 is the only even prime number.
+Examples: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31...
+NOTE: The smallest prime number is 2 and there is no 
+negative prime numbers.
+*/
 function isPrime(number) {
     if (number <= 1) return false
     for (i = 2; i < number.length; i++) {
@@ -197,10 +233,14 @@ console.log(add([-5, 6, -3, 11], [5, -6, 3, -11]))
 
 
 //Task-12
-function removeExtraSpaces(str) {
-    return str.split(' ').filter(s => s).join(' ')
-}
+/*
+Write a function named as  removeExtraSpaces() which takes a string word as an argumrnt an returns
+the string back with all extra spaces removed when invoked
+*/
 
+const removeExtraSpaces = (str) => {
+    return str.trim().split(' ').filter(s => s).join(' ')
+}
 
 console.log(removeExtraSpaces("        Hello World     "));
 console.log(removeExtraSpaces("Hello"));
