@@ -110,6 +110,16 @@ function factorial(num) {
     }
     return factorialNum;
 }
+
+// const calculateFactorial = (num) => {
+//     if (num === 0 || num  === 1) return 1
+
+//     let fac = 1;
+//     for(let i = 2; i <= num; i++) {
+//         fac *= i
+//     }
+//     return fac
+// }
 console.log(factorial(5));
 console.log(factorial(4));
 console.log(factorial(0));
